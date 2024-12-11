@@ -55,6 +55,15 @@ export interface ImagePropsIOS {
    * @platform ios
    */
   onPartialLoad?: (() => void) | undefined;
+
+  /**
+   * When true, the image will not be cached with [UIImage imageNamed:imageName],
+   * and will instead be loaded with [UIImage imageWithContentsOfFile:imagePath].
+   *
+   * Use this when you have an `Image` component that you intend to programatically
+   * change the source of, and you do not want to cache prior sources in memory.
+   */
+  transient?: boolean | undefined;
 }
 
 interface ImagePropsAndroid {

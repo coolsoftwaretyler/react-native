@@ -1762,6 +1762,38 @@ exports.examples = [
     platform: 'ios',
   },
   {
+    title: 'Transient',
+    description:
+      ('When true, the image will not be cached with [UIImage imageNamed:imageName], and will instead be loaded with [UIImage imageWithContentsOfFile:imagePath].': string),
+    render: function RenderFunction(): React.Node {
+      const images = [
+        require('../../assets/large-image-1.png'),
+        require('../../assets/large-image-2.png'),
+        require('../../assets/large-image-3.png'),
+        require('../../assets/large-image-4.png'),
+      ];
+      const [image, setImage] = React.useState(0);
+
+      const updateImage = () => {
+        if (image === images.length - 1) {
+          setImage(0);
+        } else {
+          setImage(image + 1);
+        }
+      };
+
+      return (
+        <View>
+          <Image source={images[image]} style={styles.base} />
+          <RNTesterText style={styles.touchableText} onPress={updateImage}>
+            Change Image
+          </RNTesterText>
+        </View>
+      );
+    },
+    platform: 'ios',
+  },
+  {
     title: 'Vector Drawable',
     description:
       'Demonstrating an example of loading a vector drawable asset by name',
