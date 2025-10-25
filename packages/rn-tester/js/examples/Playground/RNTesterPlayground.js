@@ -12,14 +12,16 @@ import type {RNTesterModuleExample} from '../../types/RNTesterTypes';
 
 import RNTesterText from '../../components/RNTesterText';
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Alert, Pressable, StyleSheet, Text, View} from 'react-native';
+
+const {useState} = React;
 
 function Playground() {
   return (
     <View style={styles.container}>
-      <RNTesterText>
-        Edit "RNTesterPlayground.js" to change this file
-      </RNTesterText>
+      <Text style={styles.text}>
+        Test out new features and ideas here.
+      </Text>
     </View>
   );
 }
@@ -27,6 +29,18 @@ function Playground() {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+  },
+  text: {
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  wrapperCustom: {
+    borderRadius: 8,
+    padding: 16,
+    marginBottom: 10,
+  },
+  row: {
+    flexDirection: 'column',
   },
 });
 

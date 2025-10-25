@@ -10,9 +10,9 @@
     "directory": "packages/core-cli-utils"
   },
   "exports": {
-    ".": "./src/index.js",
+    ".": "./src/index.flow.js",
     "./package.json": "./package.json",
-    "./version.js": "./src/public/version.js"
+    "./version.js": "./dist/public/version.js"
   },
   "homepage": "https://github.com/facebook/react-native/tree/HEAD/packages/core-cli-utils#readme",
   "keywords": [
